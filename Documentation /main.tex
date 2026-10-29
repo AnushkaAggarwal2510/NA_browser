@@ -1,0 +1,191 @@
+
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\onehalfspacing
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+
+    \vspace*{1cm}
+
+    {\Large \textbf{JAVA PROJECT DOCUMENTATION}\par}
+
+    \vspace{1.5cm}
+
+    {\huge \textbf{NA_Browser}\par}
+
+    \vspace{0.5cm}
+
+    {\Large A Web Browser Using JavaFX\par}
+
+    \vspace{2cm}
+
+    {\large \textbf{Submitted by}\par}
+
+    \vspace{0.5cm}
+
+    Anushka Aggarwal\\
+    Niharika
+
+    \vspace{1.5cm}
+
+    {\large \textbf{Submitted to}\par}
+
+    \vspace{0.5cm}
+
+    Dr. Jayendra Barua
+
+    \vspace{1.5cm}
+
+    {\large \textbf{Department of Computer Science and Engineering}\par}
+
+    \vspace{0.3cm}
+
+    Thapar Institute of Engineering and Technology
+
+    \vfill
+
+    Academic Year: 2026--2027
+
+\end{titlepage}
+
+% Table of Contents
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+% Chapter 1
+\chapter{Introduction}
+
+JavaFX is a Java-based framework used to develop
+graphical user interface applications. It provides
+components such as buttons, text fields, menus,
+and layouts.
+
+NA Browser is a desktop web browser developed using
+Java and JavaFX. It uses the WebView and WebEngine
+classes to load and display websites within the
+application window.
+
+% Chapter 2
+\chapter{Objectives}
+
+The main objectives of the project are:
+
+\begin{itemize}
+    \item To develop a simple and user-friendly
+    desktop web browser.
+    \item To understand JavaFX GUI development.
+    \item To implement URL loading and web navigation.
+    \item To provide Back, Forward, and Refresh
+    functionality.
+    \item To understand event handling in Java.
+\end{itemize}
+
+% Chapter 3
+\chapter{Requirements}
+
+\section{Hardware Requirements}
+
+\begin{itemize}
+    \item Computer or laptop.
+    \item Minimum 4 GB RAM.
+    \item Internet connection.
+\end{itemize}
+
+\section{Software Requirements}
+
+\begin{itemize}
+    \item Java Development Kit (JDK).
+    \item JavaFX libraries.
+    \item IntelliJ IDEA, Eclipse, or Visual Studio Code.
+    \item Apache Maven, if used for dependency management.
+    \item Windows, Linux, or macOS.
+\end{itemize}
+
+% Chapter 4
+\chapter{System Design}
+
+The browser consists of the following components:
+
+\begin{itemize}
+    \item \textbf{User Interface:} Provides the
+    address bar and navigation buttons.
+    \item \textbf{WebView:} Displays web pages.
+    \item \textbf{WebEngine:} Loads URLs and
+    manages web navigation.
+    \item \textbf{Event Handlers:} Respond to
+    button clicks and user input.
+\end{itemize}
+
+\section{Workflow}
+
+\begin{enumerate}
+    \item The user opens NA Browser.
+    \item The browser interface is displayed.
+    \item The user enters a website URL.
+    \item WebEngine loads the requested website.
+    \item WebView displays the web page.
+    \item The user navigates using the available controls.
+\end{enumerate}
+
+% Chapter 5
+\chapter{Implementation}
+
+\section{Application Window}
+
+The Stage class creates the main application window,
+while the Scene class contains the user interface.
+
+\section{Web Page Display}
+
+The WebView class displays web content, and the
+WebEngine class loads and controls web pages.
+
+\section{Navigation Controls}
+
+Buttons are used to implement Back, Forward, and
+Refresh operations through event handlers.
+
+\section{URL Handling}
+
+A text field allows users to enter website addresses.
+The entered URL is passed to WebEngine to load
+the requested page.
+
+\section{Testing}
+
+The browser should be tested for website loading,
+URL input, navigation controls, and handling of
+invalid URLs.
+
+% Conclusion
+\chapter{Conclusion}
+
+NA Browser demonstrates the development of a desktop
+application using Java and JavaFX. The project
+provides practical experience with GUI components,
+event handling, and web page integration.
+
+% References
+\begin{thebibliography}{9}
+
+\bibitem{openjfx}
+OpenJFX Documentation.
+\url{https://openjfx.io/}
+
+\bibitem{java}
+Java Documentation.
+\url{https://docs.oracle.com/en/java/}
+
+\end{thebibliography}
+
+\end{document}
