@@ -1,0 +1,7 @@
+﻿target/
+*.log
+debuglog.txt
+errorlog.txt
+runlog.txt
+NA_browser_debug.zip
+BrowserController_backup.java

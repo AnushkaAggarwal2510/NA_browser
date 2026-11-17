@@ -1,0 +1,40 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.nabrowser.BrowserController"
+      styleClass="browser"
+      spacing="0">
+
+    <TabPane fx:id="tabPane"
+             prefHeight="36"
+             minHeight="36"
+             maxHeight="36"
+             tabClosingPolicy="ALL_TABS"/>
+
+    <HBox spacing="8"
+          styleClass="toolbar"
+          alignment="CENTER_LEFT">
+
+        <Button text="←" onAction="#goBack"/>
+        <Button text="→" onAction="#goForward"/>
+        <Button text="⟳" onAction="#refreshPage"/>
+        <Button text="⌂" onAction="#goHome"/>
+
+        <TextField fx:id="addressBar"
+                   promptText="Search Google or enter website address..."
+                   HBox.hgrow="ALWAYS"
+                   onAction="#loadAddress"/>
+
+        <Button text="Go" onAction="#loadAddress"/>
+        <Button text="+" onAction="#newTab"/>
+    </HBox>
+
+    <ProgressBar fx:id="loadingBar"
+                 progress="0"
+                 maxWidth="Infinity"
+                 maxHeight="3"/>
+
+    <StackPane fx:id="webContainer"
+               VBox.vgrow="ALWAYS"/>
+</VBox>

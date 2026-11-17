@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NA Browser | Home</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #FAF9FC;
+    color: #51445F;
+}
+
+/* HEADER */
+
+.header {
+    height: 58px;
+    background: #E9E1F5;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    gap: 12px;
+    border-bottom: 1px solid #DED4EA;
+}
+
+.logo {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: #79618F;
+}
+
+.brand {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.brand-subtitle {
+    font-size: 10px;
+    color: #887B96;
+    margin-top: 2px;
+}
+
+.header-right {
+    margin-left: auto;
+    font-size: 12px;
+    color: #796B89;
+}
+
+/* MAIN LAYOUT */
+
+.main {
+    width: min(100% - 64px, 1050px);
+    height: calc(100vh - 58px);
+    margin: auto;
+    padding: 20px 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* WELCOME */
+
+.welcome {
+    margin-bottom: 12px;
+}
+
+.eyebrow {
+    color: #9A83B0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+h1 {
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 650;
+    margin: 0 0 6px;
+    color: #51445F;
+}
+
+.description {
+    color: #94889E;
+    font-size: 13px;
+}
+
+.datetime {
+    margin-top: 11px;
+    font-size: 12px;
+    color: #877694;
+}
+
+/* SEARCH */
+
+.search-container {
+    background: white;
+    border: 1px solid #E6DDEE;
+    border-radius: 13px;
+    padding: 5px 7px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 18px rgba(90,70,110,0.05);
+    margin-bottom: 17px;
+    flex-shrink: 0;
+}
+
+.search-icon {
+    padding: 0 12px;
+    font-size: 18px;
+    color: #9B88AC;
+}
+
+.search-container input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+    font-size: 13px;
+    color: #51445F;
+    background: transparent;
+}
+
+.search-container input::placeholder {
+    color: #B1A6BA;
+}
+
+.search-container button {
+    border: none;
+    background: #DCD0EF;
+    color: #625074;
+    border-radius: 9px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.search-container button:hover {
+    background: #CCBCE4;
+}
+
+/* QUICK ACCESS */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 15px;
+    font-weight: 650;
+    margin: 0;
+    color: #61536F;
+}
+
+.section-heading span {
+    font-size: 10px;
+    color: #A397AC;
+}
+
+.shortcuts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px 13px;
+}
+
+.shortcut {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    background: white;
+    border: 1px solid #EDE7F1;
+    border-radius: 12px;
+    padding: 9px 13px;
+    text-decoration: none;
+    color: #51445F;
+    transition: all 0.2s ease;
+    min-height: 55px;
+}
+
+.shortcut:hover {
+    transform: translateY(-2px);
+    border-color: #CCBCE4;
+    box-shadow: 0 5px 14px rgba(90,70,110,0.08);
+}
+
+.shortcut-icon {
+    height: 32px;
+    width: 32px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.lavender { background: #EEE7F8; color: #8269A1; }
+.pink { background: #F6E7EF; color: #A36E89; }
+.blue { background: #E6EEF8; color: #6983A6; }
+.mint { background: #E6F0E9; color: #668B72; }
+.peach { background: #F7ECE3; color: #A77D61; }
+.grey { background: #ECEBF1; color: #77728B; }
+
+.shortcut-name {
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.shortcut-desc {
+    font-size: 10px;
+    color: #A398AD;
+    margin-top: 3px;
+}
+
+/* INFORMATION CARD */
+
+.info-card {
+    margin-top: 13px;
+    padding: 11px 16px;
+    border-radius: 12px;
+    background: #F0EBF7;
+    border: 1px solid #E8DFF0;
+}
+
+.info-title {
+    font-size: 12px;
+    font-weight: 650;
+    color: #716080;
+    margin-bottom: 4px;
+}
+
+.info-text {
+    font-size: 10px;
+    color: #9689A2;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 10px;
+    padding-top: 9px;
+    border-top: 1px solid #ECE6F0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #AA9FB2;
+}
+
+/* SMALL SCREEN ADJUSTMENT */
+
+@media (max-height: 650px) {
+    .main {
+        padding-top: 8px;
+    }
+
+    .welcome {
+        margin-bottom: 5px;
+    }
+
+    .datetime {
+        margin-top: 6px;
+    }
+
+    .search-container {
+        margin-bottom: 9px;
+    }
+
+    .shortcut {
+        min-height: 46px;
+        padding: 6px 10px;
+    }
+
+    .info-card {
+        margin-top: 7px;
+        padding: 7px 12px;
+    }
+}
+
+@media (max-width: 650px) {
+    html, body {
+        overflow: auto;
+    }
+
+    .main {
+        width: calc(100% - 30px);
+        height: auto;
+        min-height: calc(100vh - 58px);
+        padding: 22px 0;
+    }
+
+    .shortcuts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-right {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">NA</div>
+
+    <div>
+        <div class="brand">NA Browser</div>
+        <div class="brand-subtitle">Your browsing workspace</div>
+    </div>
+
+    <div class="header-right">
+        Personal • Simple • Productive
+    </div>
+
+</header>
+
+<main class="main">
+
+    <section class="welcome">
+
+        <div class="eyebrow">YOUR DIGITAL WORKSPACE</div>
+
+        <h1>Good day. Welcome back.</h1>
+
+        <div class="description">
+            Everything you need to explore the web, in one place.
+        </div>
+
+        <div class="datetime" id="datetime">
+            Loading date and time...
+        </div>
+
+    </section>
+
+    <form class="search-container"
+          action="https://www.google.com/search"
+          method="GET"
+          target="_self">
+
+        <span class="search-icon">⌕</span>
+
+        <input
+            type="text"
+            name="q"
+            placeholder="Search Google or enter a question..."
+            autocomplete="off"
+            required
+        >
+
+        <button type="submit">Search ↗</button>
+
+    </form>
+
+    <section>
+
+        <div class="section-heading">
+            <h2>Quick Access</h2>
+            <span>Your frequently used websites</span>
+        </div>
+
+        <div class="shortcuts">
+
+            <a class="shortcut" href="https://www.google.com">
+                <div class="shortcut-icon lavender">G</div>
+                <div>
+                    <div class="shortcut-name">Google</div>
+                    <div class="shortcut-desc">Search engine</div>
+                </div>
+            </a>
+
+            <a class="shortcut" href="https://www.youtube.com">
+                <div class="shortcut-icon pink">▶</div>
+                <div>
+                    <div class="shortcut-name">YouTube</div>
+                    <div class="shortcut-desc">Videos and entertainment</div>
+                </div>
+            </a>
+
+            <a class="shortcut" href="https://mail.google.com">
+                <div class="shortcut-icon blue">M</div>
+                <div>
+                    <div class="shortcut-name">Gmail</div>
+                    <div class="shortcut-desc">Email and communication</div>
+                </div>
+            </a>
+
+            <a class="shortcut" href="https://github.com">
+                <div class="shortcut-icon grey">GH</div>
+                <div>
+                    <div class="shortcut-name">GitHub</div>
+                    <div class="shortcut-desc">Development workspace</div>
+                </div>
+            </a>
+
+            <a class="shortcut" href="https://chatgpt.com">
+                <div class="shortcut-icon mint">AI</div>
+                <div>
+                    <div class="shortcut-name">ChatGPT</div>
+                    <div class="shortcut-desc">AI assistant</div>
+                </div>
+            </a>
+
+            <a class="shortcut" href="https://www.netflix.com">
+                <div class="shortcut-icon peach">N</div>
+                <div>
+                    <div class="shortcut-name">Netflix</div>
+                    <div class="shortcut-desc">Movies and series</div>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="info-card">
+
+        <div class="info-title">
+            A better way to browse.
+        </div>
+
+        <div class="info-text">
+            NA Browser brings your favourite websites and search
+            experience together in a clean, simple workspace.
+            Browse, discover and stay productive.
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <span>NA Browser © 2026</span>
+        <span>Designed for a better browsing experience</span>
+    </footer>
+
+</main>
+
+<script>
+
+function updateDateTime() {
+
+    const now = new Date();
+
+    const time = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
+
+    const date = now.toLocaleDateString([], {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+
+    document.getElementById("datetime").textContent =
+        date + " • " + time;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+
+</script>
+
+</body>
+</html>
